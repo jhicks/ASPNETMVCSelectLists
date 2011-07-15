@@ -1,0 +1,6 @@
+﻿@{
+    var mmd = ViewContext.ViewData.ModelMetadata;
+    var values = mmd.AdditionalValues["SelectList"] as IEnumerable<SelectListItem>;
+}
+
+@(mmd.ModelType.IsArray ? Html.ListBox("", values) : Html.DropDownList("", values))

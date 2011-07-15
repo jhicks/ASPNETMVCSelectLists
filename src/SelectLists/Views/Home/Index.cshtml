@@ -1,0 +1,35 @@
+﻿@using SelectLists.Models
+@model HomeModel
+           
+@{
+    ViewBag.Title = "Home";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <h3>Single Not Nullable</h3>
+        @Html.EditorFor(m => m.BuildingType)
+    </div>
+    
+    <div>
+        <h3>Array</h3>
+        @Html.EditorFor(m => m.ArrayOfBuildingTypes)
+    </div>
+    
+    <div>
+        <h3>Custom Type By Nullable Value</h3>
+        @Html.EditorFor(m => m.HomeIdNullable)
+    </div>
+    
+    <div>
+        <h3>Custom Type By Value</h3>
+        @Html.EditorFor(m => m.HomeId)
+    </div>
+    
+    <div>
+        <h3>Custom Type by Reference Value</h3>
+        @Html.EditorFor(m => m.HomeIdAsString)
+    </div>
+    <input type="submit" value="Submit" />
+}
